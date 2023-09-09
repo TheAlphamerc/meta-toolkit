@@ -14,48 +14,51 @@ export default function App() {
 
   const { getMetaMap } = useMeta();
   return (
-    <section className="flex flex-col max-w-5xl mx-auto pt-8 gap-4 p-4">
-      <div className="flex flex-col gap-4 max-w-lg lg:max-w-3xl mx-auto w-full">
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
-          Preview, Edit, and Generate meta tags for your website.
-        </p>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            // @ts-ignore
-            console.log(e.target[0].value);
-            // @ts-ignore
-            const ll = e.target[0].value;
-            if (ll) {
-              setLoading(true);
-              getMetaMap(ll)?.then((data: LinkMeta | undefined) => {
-                console.log(data);
-                setLoading(false);
-                if (!Validator.hasValue(data)) {
-                  setMap({} as LinkMeta);
-                  return;
-                }
-                setMap(data!);
-              });
-            } else {
-              console.log("no url", ll);
-            }
-          }}
-          className="flex items-center gap-4"
-        >
-          <Input required placeholder="Enter " />
-          <Button variant="outline" type="submit">
-            Preview
-          </Button>
-        </form>
+    <section className="flex flex-col  mx-auto gap-8 ">
+      {/* Input Bar */}
+      <div className="bg-slate-200 p-4">
+        <div className="flex flex-col gap-4 max-w-lg lg:max-w-3xl mx-auto w-full py-28 ">
+          <p className="leading-7 [&:not(:first-child)]:mt-6">
+            Preview, Edit, and Generate meta tags for your website.
+          </p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              // @ts-ignore
+              console.log(e.target[0].value);
+              // @ts-ignore
+              const ll = e.target[0].value;
+              if (ll) {
+                setLoading(true);
+                getMetaMap(ll)?.then((data: LinkMeta | undefined) => {
+                  console.log(data);
+                  setLoading(false);
+                  if (!Validator.hasValue(data)) {
+                    setMap({} as LinkMeta);
+                    return;
+                  }
+                  setMap(data!);
+                });
+              } else {
+                console.log("no url", ll);
+              }
+            }}
+            className="flex items-center gap-4"
+          >
+            <Input required placeholder="Enter your URL" />
+            <Button variant="outline" type="submit">
+              Preview
+            </Button>
+          </form>
+        </div>
       </div>
 
-      <div className={cx("mx-auto")}>
+      <div className={cx("mx-auto w-full max-w-5xl")}>
         {(loading || map) && (
           <p className="text-muted-foreground my-6 scroll-m-20">PREVIEW</p>
         )}
         {loading ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center pb-40">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center  pb-40">
             <Skeleton className="w-full h-[420px] rounded-sm min-w-[500px]" />
             <Skeleton className="w-full h-[420px] rounded-sm min-w-[500px]" />
             <Skeleton className="w-full h-[420px] rounded-sm min-w-[500px]" />
