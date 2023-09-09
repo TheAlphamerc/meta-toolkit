@@ -53,9 +53,11 @@ export default function App() {
         </div>
       </div>
 
-      <div className={cx("mx-auto w-full max-w-5xl")}>
+      <div
+        className={cx("container mx-auto w-full max-w-[520px] lg:max-w-5xl")}
+      >
         {(loading || map) && (
-          <p className="text-muted-foreground my-6 scroll-m-20">PREVIEW</p>
+          <div className="text-muted-foreground my-6 scroll-m-20">PREVIEW</div>
         )}
         {loading ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center  pb-40">
@@ -67,8 +69,8 @@ export default function App() {
         ) : !map ? (
           <></>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center pb-40">
-            <div className="flex flex-col gap-2 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center justify-items-center pb-40">
+            <div className="flex flex-col gap-2 lg:w-full mx-auto">
               <h6 className="text-muted-foreground">Facebook</h6>
               <LinkMetaCard
                 map={map!}
@@ -77,7 +79,7 @@ export default function App() {
                 className="max-w-[520px]"
               />
             </div>
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 lg:w-full mx-auto">
               <h6 className="text-muted-foreground">Linkedin</h6>
               <LinkMetaCard
                 map={map!}
@@ -86,7 +88,7 @@ export default function App() {
                 className="max-w-[520px]"
               />
             </div>
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 lg:w-full mx-auto">
               <h6 className="text-muted-foreground">Twitter</h6>
               <LinkMetaCard
                 map={map!}
@@ -95,7 +97,7 @@ export default function App() {
                 className="max-w-[520px]"
               />
             </div>
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 lg:w-full mx-auto">
               <h6 className="text-muted-foreground">Google</h6>
               <LinkMetaCard
                 map={map!}
