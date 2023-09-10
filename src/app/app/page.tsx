@@ -6,7 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useMeta } from "@/lib/hooks/use-meta";
 import Validator from "@/lib/validator";
 import { cx } from "class-variance-authority";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LinkMetaCard } from "../(component)/link-meta-card";
 import { Meta } from "@/lib/type/meta.type";
 import CodeBlock from "../(component)/code-block";
@@ -14,8 +14,17 @@ import CodeBlock from "../(component)/code-block";
 export default function App() {
   const [meta, setMeta] = useState<Meta>();
   const [loading, setLoading] = useState(false);
-  const query = new URLSearchParams(window?.location?.search);
-  const url = query.get("url");
+  const [url, setUrl] = useState<string | undefined>();
+
+  useEffect(() => {
+    if (window) {
+      const query = new URLSearchParams(window?.location?.search);
+      const url = query.get("url");
+      if (url) {
+        setUrl(url);
+      }
+    }
+  }, []);
 
   React.useEffect(() => {
     if (url) {
