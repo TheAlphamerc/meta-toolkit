@@ -13,12 +13,26 @@ export const metadata: Metadata = {
   title: title,
   description: description,
   openGraph: {
-    title,
-    description,
+    title: title,
+    description: description,
     url: url.href,
     type: "website",
     siteName: "Meta Toolkit",
   },
+  twitter: {
+    title: title,
+    description: description,
+    card: "app",
+  },
+  applicationName: "Meta Toolkit",
+  authors: [
+    {
+      name: "Sonu Sharma",
+      url: "https://twitter.com/thealphamerc",
+    },
+  ],
+  category: "meta",
+  colorScheme: "light dark",
   abstract: "Preview how your webpage will look on social media",
   keywords: ["meta", "preview", "social media", "twitter", "facebook"],
   metadataBase: url,
