@@ -1,19 +1,17 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMeta } from "@/lib/hooks/use-meta";
+import { Meta } from "@/lib/type/meta.type";
 import Validator from "@/lib/validator";
 import { cx } from "class-variance-authority";
 import React, { useEffect, useState } from "react";
-import { LinkMetaCard } from "../(component)/link-meta-card";
-import { Meta } from "@/lib/type/meta.type";
-import CodeBlock from "../(component)/code-block";
-import Pattern from "../(component)/pattern";
 import Features from "../(component)/features.block";
 import Footer from "../(component)/footer";
+import { LinkMetaCard } from "../(component)/link-meta-card";
 import OGForm from "../(component)/og-form";
+import Pattern from "../(component)/pattern";
 
 export default function App() {
   const [meta, setMeta] = useState<Meta>();
@@ -22,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     if (window) {
-      const query = new URLSearchParams(window?.location?.search);
+      const query = new URLSearchParams(window.location.search);
       const url = query.get("url");
       if (url) {
         setUrl(url);
@@ -42,6 +40,8 @@ export default function App() {
         }
         setMeta(data!);
       });
+    } else {
+      setMeta(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
@@ -51,17 +51,15 @@ export default function App() {
     <section className="flex flex-col  mx-auto bg-gradient-to-b from-white via-gray-50/90 to-gray-50">
       <Pattern />
       {/* Input Bar */}
-      <div className="pb-10 z-0">
+      <div className="pb-10 z-0 px-4">
         <div className="flex flex-col gap-8 max-w-lg lg:max-w-3xl mx-auto w-full py-8 sm:py-12 lg:py-8 ">
           <div className="lg:text-center sm:py-8">
-            <p className=" mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <p className=" mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl text-center">
               We handle everything for you
             </p>
             <h3 className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto text-center">
-              {/* Fast and secure, we crawl your site to preview all opengraph in
-              your meta tags */}
-              Meta Toolkit allows you to preview and generate meta tags in one
-              place with one click
+              See what lies beyond the surface of a link, before you share it
+              with others through our powerful link previews.
             </h3>
           </div>
           <form
