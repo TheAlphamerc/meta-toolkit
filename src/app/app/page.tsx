@@ -106,11 +106,10 @@ export default function App() {
 
       <div className={cx(" mx-auto w-full ")}>
         {loading ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center pb-40">
-            <Skeleton className="w-full h-[420px] rounded-sm min-w-[500px]" />
-            <Skeleton className="w-full h-[420px] rounded-sm min-w-[500px]" />
-            <Skeleton className="w-full h-[420px] rounded-sm min-w-[500px]" />
-            <Skeleton className="w-full h-[420px] rounded-sm min-w-[500px]" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center pb-40 px-4">
+            <Skeleton className="w-full h-[620px] rounded-sm " />
+            <Skeleton className="w-full h-[620px] rounded-sm " />
+            <Skeleton className="w-full h-[620px] rounded-sm " />
           </div>
         ) : !meta ? (
           <Features />

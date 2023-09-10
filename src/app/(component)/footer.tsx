@@ -12,7 +12,7 @@ function OSSSection() {
     <Pattern2>
       <div
         // className="mt-20 border-t border-gray-200 py-20"
-        className="pt-20 bg-gradient-to-b from-white/10 via-transparent to-transparent"
+        className="pt-20"
       >
         <div className="mx-auto w-full max-w-screen-xl px-2.5 lg:px-20">
           <div className="mx-auto max-w-md text-center sm:max-w-xl">
@@ -48,7 +48,7 @@ function OSSSection() {
             </a>
           </div>
         </div>
-        <div className="border-t p-4 max-w-5xl m-auto text-muted-foreground text-xs">
+        <div className="border-t p-4  m-auto text-muted-foreground text-xs">
           © 2023 Toolkit{" "}
         </div>
       </div>

@@ -26,12 +26,12 @@ export default function Pattern() {
 
 export function Pattern2({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="group relative flex  bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 overflow-hidden">
+    <div className="relative  overflow-hidden">
       <div className="pointer-events-none">
         <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
           <svg
             aria-hidden="true"
-            className=" absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/5"
+            className=" absolute  inset-y-[-20%] h-[160%] w-full fill-black/[0.03] stroke-black/5"
           >
             <defs>
               <pattern
@@ -54,47 +54,14 @@ export function Pattern2({ children }: { children?: React.ReactNode }) {
             <svg x="50%" y="22" className="overflow-visible">
               <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
             </svg>
-          </svg>
-        </div>
-        <div
-          className="absolute inset-0 rounded-2xl "
-          // style="-webkit-mask-image: radial-gradient(180px at 188px 0px, white, transparent);"
-          style={{
-            maskImage:
-              "radial-gradient(180px at 188px 0px, white, transparent)",
-          }}
-        ></div>
-        <div
-          className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100"
-          // style="-webkit-mask-image: radial-gradient(180px at 188px 0px, white, transparent);"
-          style={{
-            maskImage:
-              "radial-gradient(180px at 188px 0px, white, transparent)",
-          }}
-        >
-          <svg
-            aria-hidden="true"
-            className=" absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/50 stroke-black/70 "
-          >
-            <defs>
-              <pattern
-                id=":R1dihdcqla:"
-                width="72"
-                height="56"
-                patternUnits="userSpaceOnUse"
-                x="50%"
-                y="22"
-              >
-                <path d="M.5 56V.5H72" fill="none"></path>
-              </pattern>
-            </defs>
-            <rect
-              width="100%"
-              height="100%"
-              stroke-width="0"
-              fill="url(#:R1dihdcqla:)"
-            ></rect>
-            <svg x="50%" y="22" className="overflow-visible">
+            <svg x="7.2%" y="79" className="overflow-visible">
+              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+            </svg>
+
+            <svg x="20%" y="190" className="overflow-visible">
+              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+            </svg>
+            <svg x="80%" y="190" className="overflow-visible">
               <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
             </svg>
           </svg>
