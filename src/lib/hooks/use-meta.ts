@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { OpenService } from "../service/open-service";
+import { Meta } from "../type/meta.type";
 
 export const useMeta = (): {
-  getMetaMap: (url?: string) => Promise<LinkMeta> | null;
+  getMetaMap: (url?: string) => Promise<Meta> | null;
 } => {
-  const [metaMap, setMetaMap] = useState<Record<string, LinkMeta>>({});
+  const [metaMap, setMetaMap] = useState<Record<string, Meta>>({});
 
-  const fetchData = async (url: string): Promise<LinkMeta | undefined> => {
+  const fetchData = async (url: string): Promise<Meta | undefined> => {
     try {
       const response = await OpenService.getLinkMetaData(url);
 
@@ -45,7 +46,7 @@ export const useMeta = (): {
     if (storageMeta) {
       const storageMetaMap = JSON.parse(storageMeta) as Record<
         string,
-        LinkMeta
+        Meta
       >;
       if (storageMetaMap && storageMetaMap[url]) {
         return Promise.resolve(storageMetaMap[url]);
@@ -63,11 +64,11 @@ export const useMeta = (): {
     return Promise.resolve(null);
   }
 
-  function updateLocalStorage(url: string, meta: LinkMeta | null) {
+  function updateLocalStorage(url: string, meta: Meta | null) {
     // Append meta record to the existing storage
     const storageMeta = localStorage.getItem("meta");
     if (storageMeta) {
-      const metaMap = JSON.parse(storageMeta) as Record<string, LinkMeta>;
+      const metaMap = JSON.parse(storageMeta) as Record<string, Meta>;
       // console.log("🚀 ~ metaMap Pre save map:", metaMap)
       const obj = Object.assign(metaMap, { [url]: meta });
       localStorage.setItem("meta", JSON.stringify(obj));
@@ -138,22 +139,4 @@ const blacklistUrls = [
   ".m2v",
 ];
 
-export interface LinkMeta {
-  "application-name": string;
-  date: string;
-  description: string;
-  keywords: string;
-  "og:description": string;
-  "og:image": string;
-  "og:site_name": string;
-  "og:title": string;
-  "og:type": string;
-  "og:url": string;
-  title: string;
-  "twitter:card": string;
-  "twitter:creator": string;
-  "twitter:description": string;
-  "twitter:site": string;
-  "twitter:title": string;
-  url: string;
-}
+

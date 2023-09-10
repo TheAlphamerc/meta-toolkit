@@ -1,6 +1,7 @@
 "use client";
 
-import { LinkMeta, useMeta } from "@/lib/hooks/use-meta";
+import { useMeta } from "@/lib/hooks/use-meta";
+import { Meta } from "@/lib/type/meta.type";
 import { cn } from "@/lib/utils";
 import Validator from "@/lib/validator";
 import cx from "clsx";
@@ -11,7 +12,7 @@ interface Props {
   type?: "small" | "large";
   variant?: "twitter" | "facebook" | "linkedin" | "google";
   className?: string;
-  map: LinkMeta;
+  map: Meta;
 }
 
 /**
@@ -44,9 +45,13 @@ export const LinkMetaCard: React.FC<Props> = ({
       setTitle(map["og:title"]);
     } else if (map["title"]) {
       setTitle(map["title"]);
+    } else {
+      setTitle("No title specified");
     }
     if (map["og:description"]) {
       setDescription(map["og:description"]);
+    } else {
+      setDescription("No description specified");
     }
     if (map["og:site_name"]) {
       setSiteName(map["og:site_name"]);
@@ -60,7 +65,29 @@ export const LinkMetaCard: React.FC<Props> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map]);
 
-  if (!Validator.hasValue(map)) return null;
+  if (!Validator.hasValue(map)) {
+    return (
+      <div
+        className={cx(
+          "cursor-pointer overflow-hidden max-w-[520px] border",
+          className,
+          {
+            flex: type === "small",
+            "rounded-2xl": variant === "twitter",
+            "rounded-[2px]": variant === "linkedin",
+          }
+        )}
+      >
+        <ImageView
+          src={
+            variant === "google"
+              ? "https://placehold.co/320x100/F8F8FF/A9A9A9/png?text=No+Preview"
+              : "https://placehold.co/360x150/F8F8FF/A9A9A9/png?text=No+Preview"
+          }
+        />
+      </div>
+    );
+  }
 
   if (
     !Validator.hasValue(image) &&
@@ -73,7 +100,7 @@ export const LinkMetaCard: React.FC<Props> = ({
     <>
       <div
         className={cx(
-          "theme-border-default cursor-pointer overflow-hidden max-w-[520px]",
+          "cursor-pointer overflow-hidden max-w-[520px]",
           className,
           {
             border: variant !== "google",
@@ -86,22 +113,7 @@ export const LinkMetaCard: React.FC<Props> = ({
           window.open(url, "_blank");
         }}
       >
-        {image && variant !== "google" && (
-          <Image
-            unoptimized
-            width={520}
-            height={150}
-            src={image}
-            alt={"Preview"}
-            className={cx(
-              " w-full border-b theme-border-default object-cover blur-0 ",
-              {
-                "max-w-[150px]": type === "small",
-                "h-[250px]": type === "large",
-              }
-            )}
-          />
-        )}
+        {image && variant !== "google" && <ImageView src={image} />}
         <div
           className={cx("flex-grow grid gap ", {
             "p-3": !["google", "slack"].includes(variant!),
@@ -151,6 +163,24 @@ export const LinkMetaCard: React.FC<Props> = ({
       </div>
     </>
   );
+  function ImageView({ src }: { src: string }) {
+    return (
+      <Image
+        unoptimized
+        width={520}
+        height={150}
+        src={src}
+        alt={"Preview"}
+        className={cx(
+          " w-full border-b theme-border-default object-cover blur-0 ",
+          {
+            "max-w-[150px]": type === "small",
+            "h-[250px]": variant !== "google" && type === "large",
+          }
+        )}
+      />
+    );
+  }
 };
 
 function Hostname({

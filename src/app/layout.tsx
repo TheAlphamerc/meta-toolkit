@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     title: title,
     description: description,
-    card: "app",
+    card: "summary_large_image",
   },
   applicationName: "Meta Toolkit",
   authors: [
@@ -31,11 +31,9 @@ export const metadata: Metadata = {
       url: "https://twitter.com/thealphamerc",
     },
   ],
-  category: "meta",
-  colorScheme: "light dark",
+  colorScheme: "light",
   abstract: "Preview how your webpage will look on social media",
   keywords: ["meta", "preview", "social media", "twitter", "facebook"],
-  metadataBase: url,
   themeColor: "#ffffff",
 };
 
