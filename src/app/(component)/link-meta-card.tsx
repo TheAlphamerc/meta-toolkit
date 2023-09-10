@@ -178,6 +178,10 @@ export const LinkMetaCard: React.FC<Props> = ({
             "h-[250px]": variant !== "google" && type === "large",
           }
         )}
+        onError={(e) => {
+          e.currentTarget.src =
+            "https://placehold.co/360x150/F8F8FF/A9A9A9/png?text=No+Preview";
+        }}
       />
     );
   }

@@ -1,31 +1,22 @@
 export default function Features() {
   return (
-    <div className="pb-6 ">
+    <div className="sm:py-10 pb-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center sm:py-8">
-          <p className=" mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            We handle everything for you
-          </p>
-          <h3 className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Fast and secure, we crawl your site to preview all opengraph in your
-            meta tags
-          </h3>
-        </div>
-
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             <div className="relative">
               <dt>
                 <Checkbox />
                 <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                  What is an OGP?
+                  What is an Open Graph
                 </p>
               </dt>
               <dd className="mt-2 ml-16 text-base text-gray-500">
-                OGP stands for Open Graph Protocol, which is a defined system to
-                convey the contents of webpages on SNS. By setting Open Graph
-                properly, a specified image/ title/ description is displayed
-                when a web content is shared.
+                Open Graph allows websites to provide rich media content when
+                shared on social platforms like Facebook, Twitter, LinkedIn, and
+                more. By utilizing Open Graph tags in your HTML code, you can
+                control how information from your website appears when it&apos;s
+                shared across various social media channels.
               </dd>
             </div>
             <div className="relative">

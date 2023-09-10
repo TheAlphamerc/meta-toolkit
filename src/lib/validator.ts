@@ -39,4 +39,37 @@ export default class Validator {
     }
     return true;
   }
+
+  /**
+   * Check if given url is a valid url.
+   * @param url The url to check.
+   * @returns True if the url is valid, false otherwise.
+   * @memberof Validator
+   * @example
+   * Validator.isUrl('https://www.google.com'); // true
+   * Validator.isUrl('http://www.google.com'); // true
+   * Validator.isUrl('www.google.com'); // true
+   * Validator.isUrl('google.com'); // false
+   * Validator.isUrl('google'); // false
+   * Validator.isUrl(''); // false
+   * Validator.isUrl(null); // false
+   * Validator.isUrl(undefined); // false
+   * Validator.isUrl(1); // false
+   * Validator.isUrl({}); // false
+   * Validator.isUrl([]); // false
+   * Validator.isUrl(true); // false
+   */
+  static isUrl(url: string): boolean {
+    if (!this.hasValue(url)) {
+      return false;
+    }
+    const pattern = new RegExp(
+      "^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))" +
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" +
+      "(\\?[;&a-z\\d%_.~+=-]*)?" +
+      "(\\#[-a-z\\d_]*)?$",
+      "i"
+    );
+    return pattern.test(url);
+  }
 }
