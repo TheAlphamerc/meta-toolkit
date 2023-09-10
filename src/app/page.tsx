@@ -5,9 +5,7 @@ export default function Home() {
   return (
     <main className="">
       <NavbarLayout>
-        <h3 className="text-2xl font-semibold tracking-tight text-primary">
-          Meta Toolkit
-        </h3>
+        <h3 className="text-2xl font-semibold tracking-tight ">Meta Toolkit</h3>
       </NavbarLayout>
       <App />
     </main>
