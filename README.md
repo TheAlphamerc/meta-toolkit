@@ -1,13 +1,12 @@
+## Meta Toolkit [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FTheAlphamerc%2Fmeta-toolkit&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+Meta Toolkit — Preview how your webpage will look on social media 
+
 <a href="https://meta-toolkit.vercel.app/">
   <img alt="With Meta Toolkit you can preview how your webpage will look on Twitter, Facebook, Twitter, Linkedin and more!" src="https://github.com/TheAlphamerc/meta-toolkit/blob/main/src/app/opengraph-image.png?raw=true">
-  <h1 align="center">Meta Toolkit</h1>
 </a>
 
-<p align="center">
-  Meta Toolkit — Preview how your webpage will look on social media
-</p>
 
-## Introduction
+## Introduction 
 
 Meta Toolkit makes it simple to preview and edit meta tags for any URL. Pass a website link to instantly see how it will appear in social media previews. Edit metadata to visualize changes in real-time - all in one simple tool.
 
