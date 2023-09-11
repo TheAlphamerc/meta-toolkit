@@ -9,7 +9,7 @@
 
 ## Introduction
 
-With Meta Toolkit you can preview how your webpage will look on Twitter, Facebook, Twitter, Linkedin and more!
+Meta Toolkit makes it simple to preview and edit meta tags for any URL. Pass a website link to instantly see how it will appear in social media previews. Edit metadata to visualize changes in real-time - all in one simple tool.
 
 ## Local Development
 
