@@ -15,7 +15,7 @@ export default function Logo() {
             fill="#000000"
             fill-rule="nonzero"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-miterlimit="10"

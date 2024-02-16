@@ -48,21 +48,21 @@ export function Pattern2({ children }: { children?: React.ReactNode }) {
             <rect
               width="100%"
               height="100%"
-              stroke-width="0"
+              strokeWidth="0"
               fill="url(#:R5ihdcqla:)"
             ></rect>
             <svg x="50%" y="22" className="overflow-visible">
-              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+              <rect strokeWidth="0" width="73" height="57" x="0" y="56"></rect>
             </svg>
             <svg x="7.2%" y="79" className="overflow-visible">
-              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+              <rect strokeWidth="0" width="73" height="57" x="0" y="56"></rect>
             </svg>
 
             <svg x="20%" y="190" className="overflow-visible">
-              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+              <rect strokeWidth="0" width="73" height="57" x="0" y="56"></rect>
             </svg>
             <svg x="80%" y="190" className="overflow-visible">
-              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+              <rect strokeWidth="0" width="73" height="57" x="0" y="56"></rect>
             </svg>
           </svg>
         </div>

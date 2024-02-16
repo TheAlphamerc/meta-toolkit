@@ -3,7 +3,7 @@ import Script from "next/script";
 function GTagScript() {
   const GA_MEASUREMENT_ID = "G-CT2M6878XY";
   return (
-    <div className="container">
+    <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
       />
@@ -16,7 +16,7 @@ function GTagScript() {
           gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
-    </div>
+    </>
   );
 }
 

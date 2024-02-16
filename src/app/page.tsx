@@ -1,8 +1,7 @@
 import { NavbarLayout } from "@/components/layout/appbar.layout";
 import Image from "next/image";
-import App from "./app/page";
 import Link from "next/link";
-import GTagScript from "./(component)/gtag-script";
+import App from "./app/page";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
         </Link>
       </NavbarLayout>
       <App />
-      <GTagScript />
     </main>
   );
 }

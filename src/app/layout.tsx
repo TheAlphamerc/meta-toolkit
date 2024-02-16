@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import GTagScript from "./(component)/gtag-script";
 
 const inter = Inter({ subsets: ["latin"] });
 const title =
@@ -44,6 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GTagScript />
       <body className={inter.className}>{children}</body>
     </html>
   );
